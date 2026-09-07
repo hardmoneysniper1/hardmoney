@@ -28,3 +28,11 @@ GitHub Pages debe apuntar a `main` y `/ (root)`.
 
 ## Logo personalizado
 El archivo `logo.png` es el logo proporcionado por el propietario del sitio y ya está integrado en todas las páginas y como favicon.
+
+- the-vault.png
+- vault-of-secrets.png
+- chamber-of-time.png
+- the-wraith.png
+
+## Imágenes de los Vault integradas
+Las cuatro imágenes proporcionadas ya reemplazan los iconos V/S/T/W en la página principal y aparecen también en sus páginas individuales.
