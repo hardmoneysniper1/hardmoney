@@ -1,0 +1,19 @@
+VERIFICACIÓN DE CÓDIGOS Y RECOMPENSAS
+Fecha: 7 de septiembre de 2026
+
+Resumen:
+- The Vault: 12 códigos/secretos revisados.
+- Vault of Secrets: 11 códigos/puzles revisados.
+- Chamber of Time: 7 códigos revisados.
+- The Wraith: 38 códigos conocidos listados en la sección principal.
+- gdawards e iwashere: separados como recompensas temporales, no disponibles actualmente.
+
+Correcciones importantes aplicadas:
+- The Vault ahora muestra los números exactos de icono: Cubo 51, Cubo 62, Cubo 64, Nave 20, UFO 11, UFO 12, Wave 8, Wave 13, Robot 2, Swing 2 y Estela 4.
+- Vault of Secrets: Cubo 76, Cubo 78, Cubo 80, Cubo 81, Cubo 108, Cubo 466 y Nave 163.
+- Chamber of Time: Cubo 89, Cubo 90, Cubo 91, Wave 23, Araña 26 y Robot 46.
+- The Wraith: ravenousbeasts corregido a UFO 57; gds2mil = Cubo 435; timethief = Cubo 423.
+
+Fuentes de contraste:
+- Official Geometry Dash Wiki (Vault, Vault of Secrets, Chamber of Time, Secret Room, Achievements, Icon Kit)
+- Fuentes recientes de comunidad/guías solo cuando la wiki presenta la recompensa como imagen sin número textual.

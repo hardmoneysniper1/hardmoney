@@ -24,7 +24,7 @@ Sube todos estos archivos a la raíz del repositorio `hardmoney`.
 No cambies los nombres.
 GitHub Pages debe apuntar a `main` y `/ (root)`.
 
-Última verificación de códigos: 6 de septiembre de 2026.
+Última verificación de códigos: 7 de septiembre de 2026.
 
 ## Logo personalizado
 El archivo `logo.png` es el logo proporcionado por el propietario del sitio y ya está integrado en todas las páginas y como favicon.
@@ -36,3 +36,7 @@ El archivo `logo.png` es el logo proporcionado por el propietario del sitio y ya
 
 ## Imágenes de los Vault integradas
 Las cuatro imágenes proporcionadas ya reemplazan los iconos V/S/T/W en la página principal y aparecen también en sus páginas individuales.
+
+
+## Recompensas verificadas
+Las recompensas de los 68 códigos actuales/permanentes fueron revisadas de nuevo el 7 de septiembre de 2026. Los códigos temporales gdawards e iwashere permanecen separados como no disponibles actualmente.
