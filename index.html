@@ -1,990 +1,962 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Códigos Geometry Dash 2026 | Vault, Secrets, Chamber y Wraith</title>
 
-    <title>Códigos Geometry Dash | Todos los códigos y secretos</title>
+  <meta
+    name="description"
+    content="Todos los códigos de Geometry Dash actualizados: The Vault, Vault of Secrets, Chamber of Time y The Wraith. Copia los códigos y descubre sus recompensas."
+  />
 
-    <meta
-        name="description"
-        content="Descubre códigos de Geometry Dash, The Vault, Vault of Secrets, Chamber of Time, llaves, cofres y secretos."
-    >
-
-    <meta
-        name="keywords"
-        content="Geometry Dash códigos, códigos Geometry Dash, The Vault, Vault of Secrets, Chamber of Time, Geometry Dash secretos"
-    >
-
-    <meta name="author" content="Códigos Geometry Dash">
-
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <h1>⚡ Códigos Geometry Dash</h1>
+      <p>Todos los códigos, secretos y recompensas de Geometry Dash</p>
 
-    <header class="header">
+      <nav>
+        <a href="#vault">The Vault</a>
+        <a href="#secrets">Vault of Secrets</a>
+        <a href="#chamber">Chamber of Time</a>
+        <a href="#wraith">The Wraith</a>
+      </nav>
+    </div>
+  </header>
 
-        <div class="container nav">
 
-            <a href="#" class="logo">
-                <span class="logo-icon">◆</span>
-                CÓDIGOS <span>GD</span>
-            </a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
 
-            <nav class="menu">
-                <a href="#inicio">Inicio</a>
-                <a href="#codigos">Códigos</a>
-                <a href="#secretos">Secretos</a>
-                <a href="#guias">Guías</a>
-            </nav>
+      <h2>Todos los códigos de Geometry Dash 2026</h2>
 
-            <button class="menu-button" id="menuButton">
-                ☰
-            </button>
+      <p>
+        Encuentra códigos secretos de Geometry Dash, recompensas,
+        iconos, Demon Keys, orbes, diamantes y mucho más.
+      </p>
 
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="🔎 Buscar código..."
+        onkeyup="searchCodes()"
+      />
+
+    </div>
+  </section>
+
+
+  <main class="container">
+
+    <!-- THE VAULT -->
+
+    <section id="vault" class="vault-section">
+
+      <h2>🔐 The Vault</h2>
+
+      <p>
+        The Vault es una de las primeras salas secretas de Geometry Dash.
+        Introduce estos códigos para conseguir diferentes recompensas.
+      </p>
+
+      <div class="codes-grid">
+
+        <div class="code-card">
+          <h3>FINAL BOSS</h3>
+          <p>🎁 Swing</p>
+          <button onclick="copyCode('FINAL BOSS')">
+            Copiar código
+          </button>
         </div>
 
-    </header>
 
-
-    <!-- ================= HERO ================= -->
-
-    <main>
-
-        <section class="hero" id="inicio">
-
-            <div class="hero-background"></div>
-
-            <div class="container hero-content">
-
-                <div class="hero-text">
-
-                    <div class="badge">
-                        🎮 GUÍA DE GEOMETRY DASH
-                    </div>
-
-                    <h1>
-                        Códigos de
-                        <span>Geometry Dash</span>
-                    </h1>
-
-                    <p>
-                        Encuentra códigos, secretos, llaves y recompensas
-                        de Geometry Dash en un solo lugar.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a href="#codigos" class="button primary">
-                            🔐 Ver códigos
-                        </a>
-
-                        <a href="#secretos" class="button secondary">
-                            ⚡ Ver secretos
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <div class="hero-card">
-
-                    <div class="cube">
-                        ◆
-                    </div>
-
-                    <div class="hero-card-title">
-                        GEOMETRY DASH
-                    </div>
-
-                    <div class="hero-card-subtitle">
-                        CODES & SECRETS
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= BUSCADOR ================= -->
-
-        <section class="search-section">
-
-            <div class="container">
-
-                <div class="search-box">
-
-                    <span class="search-icon">🔎</span>
-
-                    <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Buscar un código, Vault, secreto..."
-                        autocomplete="off"
-                    >
-
-                    <button id="clearSearch">
-                        ×
-                    </button>
-
-                </div>
-
-                <p class="search-help">
-                    Busca por nombre, código o categoría.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CATEGORÍAS ================= -->
-
-        <section class="categories">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        EXPLORA
-                    </span>
-
-                    <h2>
-                        Todo sobre Geometry Dash
-                    </h2>
-
-                    <p>
-                        Accede rápidamente a las principales secciones.
-                    </p>
-
-                </div>
-
-
-                <div class="category-grid">
-
-                    <a href="#codigos" class="category-card">
-
-                        <div class="category-icon purple">
-                            🔐
-                        </div>
-
-                        <h3>
-                            Códigos
-                        </h3>
-
-                        <p>
-                            Códigos de las diferentes Vaults.
-                        </p>
-
-                        <span>
-                            Ver códigos →
-                        </span>
-
-                    </a>
-
-
-                    <a href="#secretos" class="category-card">
-
-                        <div class="category-icon blue">
-                            🗝️
-                        </div>
-
-                        <h3>
-                            Secretos
-                        </h3>
-
-                        <p>
-                            Descubre secretos y recompensas.
-                        </p>
-
-                        <span>
-                            Ver secretos →
-                        </span>
-
-                    </a>
-
-
-                    <a href="#guias" class="category-card">
-
-                        <div class="category-icon green">
-                            📖
-                        </div>
-
-                        <h3>
-                            Guías
-                        </h3>
-
-                        <p>
-                            Tutoriales paso a paso.
-                        </p>
-
-                        <span>
-                            Ver guías →
-                        </span>
-
-                    </a>
-
-
-                    <a href="#llaves" class="category-card">
-
-                        <div class="category-icon orange">
-                            🔑
-                        </div>
-
-                        <h3>
-                            Llaves
-                        </h3>
-
-                        <p>
-                            Cómo conseguir llaves y cofres.
-                        </p>
-
-                        <span>
-                            Ver información →
-                        </span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CÓDIGOS ================= -->
-
-        <section class="codes-section" id="codigos">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        CÓDIGOS
-                    </span>
-
-                    <h2>
-                        Códigos de Geometry Dash
-                    </h2>
-
-                    <p>
-                        Selecciona una Vault para consultar sus códigos.
-                    </p>
-
-                </div>
-
-
-                <div class="vault-tabs">
-
-                    <button
-                        class="vault-tab active"
-                        data-vault="the-vault"
-                    >
-                        🔐 The Vault
-                    </button>
-
-                    <button
-                        class="vault-tab"
-                        data-vault="vault-secrets"
-                    >
-                        🔒 Vault of Secrets
-                    </button>
-
-                    <button
-                        class="vault-tab"
-                        data-vault="chamber"
-                    >
-                        ⏳ Chamber of Time
-                    </button>
-
-                </div>
-
-
-                <!-- THE VAULT -->
-
-                <div class="code-panel active" id="the-vault">
-
-                    <div class="panel-header">
-
-                        <div>
-                            <span class="small-label">
-                                VAULT 01
-                            </span>
-
-                            <h3>
-                                The Vault
-                            </h3>
-                        </div>
-
-                        <span class="status">
-                            ● CÓDIGOS
-                        </span>
-
-                    </div>
-
-
-                    <div class="code-grid">
-
-                        <article class="code-card">
-
-                            <div class="code-info">
-                                <h4>
-                                    Spooky
-                                </h4>
-
-                                <p>
-                                    Código de ejemplo
-                                </p>
-                            </div>
-
-                            <button
-                                class="copy-button"
-                                data-code="spooky"
-                            >
-                                COPIAR
-                            </button>
-
-                        </article>
-
-
-                        <article class="code-card">
-
-                            <div class="code-info">
-                                <h4>
-                                    Lenny
-                                </h4>
-
-                                <p>
-                                    Código de ejemplo
-                                </p>
-                            </div>
-
-                            <button
-                                class="copy-button"
-                                data-code="lenny"
-                            >
-                                COPIAR
-                            </button>
-
-                        </article>
-
-
-                        <article class="code-card">
-
-                            <div class="code-info">
-                                <h4>
-                                    Neverending
-                                </h4>
-
-                                <p>
-                                    Código de ejemplo
-                                </p>
-                            </div>
-
-                            <button
-                                class="copy-button"
-                                data-code="neverending"
-                            >
-                                COPIAR
-                            </button>
-
-                        </article>
-
-
-                        <article class="code-card">
-
-                            <div class="code-info">
-                                <h4>
-                                    Ahead
-                                </h4>
-
-                                <p>
-                                    Código de ejemplo
-                                </p>
-                            </div>
-
-                            <button
-                                class="copy-button"
-                                data-code="ahead"
-                            >
-                                COPIAR
-                            </button>
-
-                        </article>
-
-                    </div>
-
-                </div>
-
-
-                <!-- VAULT OF SECRETS -->
-
-                <div class="code-panel" id="vault-secrets">
-
-                    <div class="panel-header">
-
-                        <div>
-                            <span class="small-label">
-                                VAULT 02
-                            </span>
-
-                            <h3>
-                                Vault of Secrets
-                            </h3>
-                        </div>
-
-                        <span class="status">
-                            ● CÓDIGOS
-                        </span>
-
-                    </div>
-
-
-                    <div class="code-grid">
-
-                        <article class="code-card">
-
-                            <div class="code-info">
-                                <h4>
-                                    The Challenge
-                                </h4>
-
-                                <p>
-                                    Introduce el código en la Vault.
-                                </p>
-                            </div>
-
-                            <button
-                                class="copy-button"
-                                data-code="the challenge"
-                            >
-                                COPIAR
-                            </button>
-
-                        </article>
-
-
-                        <article class="code-card">
-
-                            <div class="code-info">
-                                <h4>
-                                    Cod3breaker
-                                </h4>
-
-                                <p>
-                                    Código relacionado con un secreto.
-                                </p>
-                            </div>
-
-                            <button
-                                class="copy-button"
-                                data-code="cod3breaker"
-                            >
-                                COPIAR
-                            </button>
-
-                        </article>
-
-
-                        <article class="code-card">
-
-                            <div class="code-info">
-                                <h4>
-                                    Brain Power
-                                </h4>
-
-                                <p>
-                                    Código de la Vault.
-                                </p>
-                            </div>
-
-                            <button
-                                class="copy-button"
-                                data-code="brain power"
-                            >
-                                COPIAR
-                            </button>
-
-                        </article>
-
-                    </div>
-
-                </div>
-
-
-                <!-- CHAMBER -->
-
-                <div class="code-panel" id="chamber">
-
-                    <div class="panel-header">
-
-                        <div>
-                            <span class="small-label">
-                                VAULT 03
-                            </span>
-
-                            <h3>
-                                Chamber of Time
-                            </h3>
-                        </div>
-
-                        <span class="status">
-                            ● GUÍA
-                        </span>
-
-                    </div>
-
-
-                    <div class="chamber-content">
-
-                        <div class="chamber-icon">
-                            ⏳
-                        </div>
-
-                        <div>
-
-                            <h3>
-                                ¿Quieres entrar a Chamber of Time?
-                            </h3>
-
-                            <p>
-                                Próximamente añadiremos una guía completa
-                                explicando cómo desbloquear esta zona.
-                            </p>
-
-                            <a href="#guias" class="button primary">
-                                Ver guía
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= SECRETOS ================= -->
-
-        <section class="secrets-section" id="secretos">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        SECRETOS
-                    </span>
-
-                    <h2>
-                        Secretos de Geometry Dash
-                    </h2>
-
-                    <p>
-                        Aprende cómo desbloquear contenido oculto.
-                    </p>
-
-                </div>
-
-
-                <div class="article-grid">
-
-                    <article class="article-card">
-
-                        <div class="article-image vault-image">
-                            🔐
-                        </div>
-
-                        <div class="article-content">
-
-                            <span class="article-tag">
-                                VAULT
-                            </span>
-
-                            <h3>
-                                Cómo abrir The Vault
-                            </h3>
-
-                            <p>
-                                Aprende qué necesitas para acceder
-                                a la primera Vault.
-                            </p>
-
-                            <a href="#">
-                                Leer guía →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="article-card">
-
-                        <div class="article-image secret-image">
-                            🔒
-                        </div>
-
-                        <div class="article-content">
-
-                            <span class="article-tag">
-                                SECRETO
-                            </span>
-
-                            <h3>
-                                Vault of Secrets
-                            </h3>
-
-                            <p>
-                                Descubre cómo acceder a esta zona
-                                secreta.
-                            </p>
-
-                            <a href="#">
-                                Leer guía →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="article-card">
-
-                        <div class="article-image chamber-image">
-                            ⏳
-                        </div>
-
-                        <div class="article-content">
-
-                            <span class="article-tag">
-                                CHAMBER
-                            </span>
-
-                            <h3>
-                                Chamber of Time
-                            </h3>
-
-                            <p>
-                                Guía para desbloquear Chamber of Time.
-                            </p>
-
-                            <a href="#">
-                                Leer guía →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= GUIAS ================= -->
-
-        <section class="guides-section" id="guias">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        GUÍAS
-                    </span>
-
-                    <h2>
-                        Guías populares
-                    </h2>
-
-                    <p>
-                        Tutoriales fáciles de seguir.
-                    </p>
-
-                </div>
-
-
-                <div class="guide-list">
-
-                    <a href="#" class="guide-item">
-
-                        <div class="guide-number">
-                            01
-                        </div>
-
-                        <div class="guide-text">
-                            <h3>
-                                Cómo conseguir llaves
-                            </h3>
-
-                            <p>
-                                Aprende cómo conseguir llaves y abrir cofres.
-                            </p>
-                        </div>
-
-                        <span class="guide-arrow">
-                            →
-                        </span>
-
-                    </a>
-
-
-                    <a href="#" class="guide-item">
-
-                        <div class="guide-number">
-                            02
-                        </div>
-
-                        <div class="guide-text">
-                            <h3>
-                                Cómo conseguir Secret Coins
-                            </h3>
-
-                            <p>
-                                Información y consejos para conseguir monedas.
-                            </p>
-                        </div>
-
-                        <span class="guide-arrow">
-                            →
-                        </span>
-
-                    </a>
-
-
-                    <a href="#" class="guide-item">
-
-                        <div class="guide-number">
-                            03
-                        </div>
-
-                        <div class="guide-text">
-                            <h3>
-                                Cómo desbloquear iconos
-                            </h3>
-
-                            <p>
-                                Descubre diferentes formas de conseguir iconos.
-                            </p>
-                        </div>
-
-                        <span class="guide-arrow">
-                            →
-                        </span>
-
-                    </a>
-
-
-                    <a href="#" class="guide-item">
-
-                        <div class="guide-number">
-                            04
-                        </div>
-
-                        <div class="guide-text">
-                            <h3>
-                                Todos los secretos
-                            </h3>
-
-                            <p>
-                                Próximamente: recopilación completa.
-                            </p>
-                        </div>
-
-                        <span class="guide-arrow">
-                            →
-                        </span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= LLAVES ================= -->
-
-        <section class="keys-section" id="llaves">
-
-            <div class="container">
-
-                <div class="keys-box">
-
-                    <div class="keys-icon">
-                        🔑
-                    </div>
-
-                    <div>
-
-                        <span class="section-label">
-                            RECOMPENSAS
-                        </span>
-
-                        <h2>
-                            Llaves y cofres
-                        </h2>
-
-                        <p>
-                            Próximamente añadiremos una guía detallada
-                            sobre las diferentes llaves, cofres y recompensas
-                            disponibles en Geometry Dash.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CTA ================= -->
-
-        <section class="cta-section">
-
-            <div class="container">
-
-                <div class="cta">
-
-                    <div>
-
-                        <span class="section-label">
-                            CÓDIGOS GEOMETRY DASH
-                        </span>
-
-                        <h2>
-                            ¿No encuentras lo que buscas?
-                        </h2>
-
-                        <p>
-                            Utiliza el buscador para encontrar rápidamente
-                            códigos y guías.
-                        </p>
-
-                    </div>
-
-                    <a href="#inicio" class="button primary">
-                        🔎 Buscar
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer class="footer">
-
-        <div class="container footer-content">
-
-            <div class="footer-brand">
-
-                <a href="#" class="logo">
-                    <span class="logo-icon">◆</span>
-                    CÓDIGOS <span>GD</span>
-                </a>
-
-                <p>
-                    Guías, códigos y secretos de Geometry Dash.
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <h4>
-                    Navegación
-                </h4>
-
-                <a href="#inicio">
-                    Inicio
-                </a>
-
-                <a href="#codigos">
-                    Códigos
-                </a>
-
-                <a href="#secretos">
-                    Secretos
-                </a>
-
-                <a href="#guias">
-                    Guías
-                </a>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <h4>
-                    Información
-                </h4>
-
-                <a href="#">
-                    Contacto
-                </a>
-
-                <a href="#">
-                    Privacidad
-                </a>
-
-                <a href="#">
-                    Aviso legal
-                </a>
-
-            </div>
+        <div class="code-card">
+          <h3>AHEAD</h3>
+          <p>🎁 Flecha</p>
+          <button onclick="copyCode('AHEAD')">
+            Copiar código
+          </button>
+        </div>
+
+
+        <div class="code-card">
+          <h3>lenny</h3>
+          <p>🎁 Icono</p>
+          <button onclick="copyCode('lenny')">
+            Copiar código
+          </button>
+        </div>
+
+
+        <div class="code-card">
+          <h3>sparky</h3>
+          <p>🎁 Moneda secreta</p>
+          <button onclick="copyCode('sparky')">
+            Copiar código
+          </button>
+        </div>
+
+
+        <div class="code-card">
+          <h3>spooky</h3>
+          <p>🎁 Icono</p>
+          <button onclick="copyCode('spooky')">
+            Copiar código
+          </button>
+        </div>
+
+
+        <div class="code-card">
+          <h3>8 → 16 → 30 → 32 → 46 → 84</h3>
+
+          <p>
+            🎁 Flecha
+          </p>
+
+          <p class="warning">
+            ⚠ Introduce cada número por separado.
+          </p>
 
         </div>
 
 
-        <div class="footer-bottom">
+        <div class="code-card">
+          <h3>neverending</h3>
+          <p>🎁 UFO</p>
 
-            <div class="container">
+          <button onclick="copyCode('neverending')">
+            Copiar código
+          </button>
+        </div>
 
-                <p>
-                    © <span id="year"></span> Códigos Geometry Dash.
-                    Sitio independiente y no oficial.
-                </p>
 
-            </div>
+        <div class="code-card">
+          <h3>blockbite</h3>
+
+          <p>🎁 UFO</p>
+
+          <button onclick="copyCode('blockbite')">
+            Copiar código
+          </button>
 
         </div>
 
-    </footer>
+
+        <div class="code-card">
+          <h3>mule</h3>
+
+          <p>🎁 Nave</p>
+
+          <button onclick="copyCode('mule')">
+            Copiar código
+          </button>
+
+        </div>
 
 
-    <!-- TOAST -->
+        <div class="code-card">
+          <h3>gandalfpotter</h3>
 
-    <div class="toast" id="toast">
-        Código copiado ✓
+          <p>🎁 Estela</p>
+
+          <button onclick="copyCode('gandalfpotter')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+          <h3>robtop</h3>
+
+          <p>🎁 Robot</p>
+
+          <button onclick="copyCode('robtop')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+          <h3>Tu nombre de usuario</h3>
+
+          <p>🎁 Icono</p>
+
+          <p class="warning">
+            ⚠ Debes introducir el nickname de tu cuenta de Geometry Dash.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- VAULT OF SECRETS -->
+
+    <section id="secrets" class="vault-section">
+
+      <h2>👁️ Vault of Secrets</h2>
+
+      <p>
+        El Vault of Secrets contiene algunos de los códigos y puzles
+        secretos más conocidos de Geometry Dash.
+      </p>
+
+      <div class="codes-grid">
+
+
+        <div class="code-card">
+
+          <h3>thechickenisready</h3>
+
+          <p>🎁 Recompensa secreta</p>
+
+          <button onclick="copyCode('thechickenisready')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>d4shg30me7ry</h3>
+
+          <p>🎁 Recompensa secreta</p>
+
+          <button onclick="copyCode('d4shg30me7ry')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>brainpower</h3>
+
+          <p>🎁 Recompensa secreta</p>
+
+          <button onclick="copyCode('brainpower')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>thechickenisonfire</h3>
+
+          <p>🎁 Recompensa secreta</p>
+
+          <button onclick="copyCode('thechickenisonfire')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>gimmiethecolor</h3>
+
+          <p>🎁 Color</p>
+
+          <button onclick="copyCode('gimmiethecolor')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>glubfub</h3>
+
+          <p>🎁 Moneda secreta</p>
+
+          <button onclick="copyCode('glubfub')">
+            Copiar código
+          </button>
+
+          <p class="warning">
+            ⚠ Este código requiere completar primero una conversación
+            secreta entre los Vault.
+          </p>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>the challenge</h3>
+
+          <p>🎁 Desbloquea The Challenge</p>
+
+          <button onclick="copyCode('the challenge')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>octocube</h3>
+
+          <p>🎁 Icono</p>
+
+          <button onclick="copyCode('octocube')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>seven</h3>
+
+          <p>🎁 Icono</p>
+
+          <button onclick="copyCode('seven')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>Número de estrellas</h3>
+
+          <p>🎁 Recompensa secreta</p>
+
+          <p class="warning">
+            ⚠ Introduce el número exacto de estrellas que tienes.
+          </p>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>cod3breaker</h3>
+
+          <p>🧩 Puzle secreto</p>
+
+          <button onclick="copyCode('cod3breaker')">
+            Copiar código
+          </button>
+
+          <p class="warning">
+            ⚠ Después tendrás que resolver una secuencia de números.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CHAMBER -->
+
+    <section id="chamber" class="vault-section">
+
+      <h2>⏳ Chamber of Time</h2>
+
+      <p>
+        Una de las salas secretas más importantes de Geometry Dash.
+        Estos códigos no necesitan puzles adicionales.
+      </p>
+
+
+      <div class="codes-grid">
+
+
+        <div class="code-card">
+
+          <h3>backontrack</h3>
+
+          <p>🎁 Araña</p>
+
+          <button onclick="copyCode('backontrack')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>givemehelper</h3>
+
+          <p>🎁 Robot</p>
+
+          <button onclick="copyCode('givemehelper')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>darkness</h3>
+
+          <p>🎁 Icono</p>
+
+          <button onclick="copyCode('darkness')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>silence</h3>
+
+          <p>🎁 Icono</p>
+
+          <button onclick="copyCode('silence')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>river</h3>
+
+          <p>🎁 Color secundario</p>
+
+          <button onclick="copyCode('river')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>hunger</h3>
+
+          <p>🎁 Icono</p>
+
+          <button onclick="copyCode('hunger')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>volcano</h3>
+
+          <p>🎁 Flecha</p>
+
+          <button onclick="copyCode('volcano')">
+            Copiar código
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- THE WRAITH -->
+
+    <section id="wraith" class="vault-section">
+
+      <h2>👻 The Wraith</h2>
+
+      <p>
+        The Wraith contiene códigos que pueden otorgar orbes,
+        diamantes, Demon Keys, fragmentos y otras recompensas.
+      </p>
+
+      <div class="codes-grid">
+
+
+        <div class="code-card">
+
+          <h3>robtopisnice</h3>
+
+          <p>🎁 10 Orbes</p>
+
+          <button onclick="copyCode('robtopisnice')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>checksteam</h3>
+
+          <p>🔑 1 Demon Key</p>
+
+          <button onclick="copyCode('checksteam')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>fireinthehole</h3>
+
+          <p>🔥 Fragmento de fuego</p>
+
+          <button onclick="copyCode('fireinthehole')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>wateronthehill</h3>
+
+          <p>❄️ Fragmento de hielo</p>
+
+          <button onclick="copyCode('wateronthehill')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>skibidi</h3>
+
+          <p>🎁 Orbes</p>
+
+          <button onclick="copyCode('skibidi')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>wellmet</h3>
+
+          <p>💎 5 Diamantes</p>
+
+          <button onclick="copyCode('wellmet')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>thickofit</h3>
+
+          <p>🎁 Orbes</p>
+
+          <button onclick="copyCode('thickofit')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>bussin</h3>
+
+          <p>🎁 69 Orbes</p>
+
+          <button onclick="copyCode('bussin')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>touchgrass</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('touchgrass')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>key</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('key')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>gullible</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('gullible')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>back on dash</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('back on dash')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>geometry</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('geometry')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>citadel</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('citadel')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>retrospective</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('retrospective')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>ruins</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('ruins')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>cheat codes</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('cheat codes')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>space gauntlet</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('space gauntlet')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>i am in pain</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('i am in pain')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>backstreet boy</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('backstreet boy')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>noel electra</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('noel electra')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>GD2025</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('GD2025')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>duckstep</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('duckstep')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>skyline pt 2</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('skyline pt 2')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>boogie</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('boogie')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>button masher</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('button masher')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>ncs album</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('ncs album')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>putyahandsup</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('putyahandsup')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>randomgauntlet</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('randomgauntlet')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>ravenousbeasts</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('ravenousbeasts')">
+            Copiar código
+          </button>
+
+        </div>
+
+
+        <div class="code-card">
+
+          <h3>brainpowah47</h3>
+
+          <p>🎁 Recompensa</p>
+
+          <button onclick="copyCode('brainpowah47')">
+            Copiar código
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- INFORMACION -->
+
+    <section class="info">
+
+      <h2>❓ ¿Cómo usar los códigos de Geometry Dash?</h2>
+
+      <p>
+        Geometry Dash contiene varias salas secretas donde puedes escribir
+        códigos y desbloquear diferentes recompensas.
+      </p>
+
+      <p>
+        Algunos códigos funcionan inmediatamente mientras que otros
+        requieren completar puzles o tener determinados objetos dentro
+        del juego.
+      </p>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <h3>⚡ Códigos Geometry Dash</h3>
+
+      <p>
+        Guías, códigos y secretos de Geometry Dash.
+      </p>
+
+      <p>
+        Sitio creado por fans. No afiliado oficialmente con RobTop Games.
+      </p>
+
+      <p>
+        © 2026 Códigos Geometry Dash
+      </p>
+
     </div>
 
+  </footer>
 
-    <script src="script.js"></script>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
