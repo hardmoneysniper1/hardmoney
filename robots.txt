@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hardmoneysniper1.github.io/hardmoney/sitemap.xml

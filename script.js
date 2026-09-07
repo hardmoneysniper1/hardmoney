@@ -1,291 +1,99 @@
-/* =========================================================
-   CÓDIGOS GEOMETRY DASH
-   VERSION 1.0
-========================================================= */
+(() => {
+  const toast = document.getElementById('toast');
+  const showToast = (msg) => {
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 1500);
+  };
 
+  const favKey = 'gd-code-favorites-v1';
+  const getFavs = () => {
+    try { return new Set(JSON.parse(localStorage.getItem(favKey) || '[]')); }
+    catch { return new Set(); }
+  };
+  const saveFavs = (set) => localStorage.setItem(favKey, JSON.stringify([...set]));
+  let favs = getFavs();
 
-/* ================= AÑO AUTOMÁTICO ================= */
+  document.querySelectorAll('.code-card').forEach(card => {
+    const code = (card.querySelector('h3')?.textContent || '').trim();
+    const fav = card.querySelector('.fav-btn');
+    if (fav && favs.has(code)) {
+      fav.classList.add('is-fav');
+      fav.textContent = '★';
+    }
+    fav?.addEventListener('click', () => {
+      if (favs.has(code)) favs.delete(code); else favs.add(code);
+      saveFavs(favs);
+      fav.classList.toggle('is-fav', favs.has(code));
+      fav.textContent = favs.has(code) ? '★' : '☆';
+      applyFilters();
+    });
+  });
 
-const yearElement = document.getElementById("year");
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const code = btn.dataset.code || '';
+      try {
+        await navigator.clipboard.writeText(code);
+        const old = btn.textContent;
+        btn.textContent = '✓ Copiado';
+        showToast(`Copiado: ${code}`);
+        setTimeout(() => btn.textContent = old, 1200);
+      } catch {
+        showToast(`Código: ${code}`);
+      }
+    });
+  });
 
-if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-}
+  const input = document.getElementById('searchInput');
+  const filterButtons = [...document.querySelectorAll('.filter-btn')];
+  const cards = [...document.querySelectorAll('.all-codes .code-card')];
+  const blocks = [...document.querySelectorAll('.vault-block')];
+  const count = document.getElementById('resultCount');
+  const empty = document.getElementById('emptyState');
+  let filter = 'all';
 
+  function normalize(s) {
+    return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
 
-/* ================= MENÚ MÓVIL ================= */
+  function applyFilters() {
+    if (!cards.length) return;
+    const q = normalize(input?.value || '');
+    let visible = 0;
 
-const menuButton = document.getElementById("menuButton");
-const menu = document.querySelector(".menu");
-
-if (menuButton) {
-
-    menuButton.addEventListener("click", () => {
-
-        menu.classList.toggle("open");
-
+    cards.forEach(card => {
+      const vault = card.dataset.vault || '';
+      const hay = normalize(card.dataset.search || card.textContent);
+      const code = (card.querySelector('h3')?.textContent || '').trim();
+      const vaultOK = filter === 'all' || vault === filter || (filter === 'favorites' && favs.has(code));
+      const searchOK = !q || hay.includes(q);
+      const show = vaultOK && searchOK;
+      card.classList.toggle('hidden', !show);
+      if (show) visible++;
     });
 
-}
-
-
-/* Cerrar menú al pulsar un enlace */
-
-document.querySelectorAll(".menu a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        menu.classList.remove("open");
-
+    blocks.forEach(block => {
+      const shown = [...block.querySelectorAll('.code-card')].some(c => !c.classList.contains('hidden'));
+      block.classList.toggle('hidden', !shown);
     });
 
-});
-
-
-/* ================= TABS DE VAULTS ================= */
-
-const vaultTabs = document.querySelectorAll(".vault-tab");
-const codePanels = document.querySelectorAll(".code-panel");
-
-
-vaultTabs.forEach(tab => {
-
-    tab.addEventListener("click", () => {
-
-        const target = tab.dataset.vault;
-
-
-        /* Quitar active de botones */
-
-        vaultTabs.forEach(item => {
-
-            item.classList.remove("active");
-
-        });
-
-
-        /* Activar botón seleccionado */
-
-        tab.classList.add("active");
-
-
-        /* Ocultar paneles */
-
-        codePanels.forEach(panel => {
-
-            panel.classList.remove("active");
-
-        });
-
-
-        /* Mostrar panel */
-
-        const selectedPanel =
-            document.getElementById(target);
-
-        if (selectedPanel) {
-
-            selectedPanel.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-/* ================= COPIAR CÓDIGOS ================= */
-
-const copyButtons =
-    document.querySelectorAll(".copy-button");
-
-const toast =
-    document.getElementById("toast");
-
-
-copyButtons.forEach(button => {
-
-    button.addEventListener("click", async () => {
-
-        const code = button.dataset.code;
-
-
-        try {
-
-            await navigator.clipboard.writeText(code);
-
-            showToast("Código copiado ✓");
-
-
-            const originalText =
-                button.textContent;
-
-
-            button.textContent = "COPIADO ✓";
-
-
-            setTimeout(() => {
-
-                button.textContent =
-                    originalText;
-
-            }, 1500);
-
-
-        } catch (error) {
-
-            showToast(
-                "No se pudo copiar automáticamente"
-            );
-
-        }
-
-    });
-
-});
-
-
-/* ================= TOAST ================= */
-
-function showToast(message) {
-
-    toast.textContent = message;
-
-    toast.classList.add("show");
-
-
-    setTimeout(() => {
-
-        toast.classList.remove("show");
-
-    }, 2200);
-
-}
-
-
-/* ================= BUSCADOR ================= */
-
-const searchInput =
-    document.getElementById("searchInput");
-
-const clearSearch =
-    document.getElementById("clearSearch");
-
-
-const searchableElements = [
-    ...document.querySelectorAll(
-        ".category-card, .code-card, .article-card, .guide-item"
-    )
-];
-
-
-if (searchInput) {
-
-    searchInput.addEventListener("input", () => {
-
-        const search =
-            searchInput.value
-                .toLowerCase()
-                .trim();
-
-
-        searchableElements.forEach(element => {
-
-            const text =
-                element.textContent.toLowerCase();
-
-
-            if (
-                search === "" ||
-                text.includes(search)
-            ) {
-
-                element.classList.remove(
-                    "search-hidden"
-                );
-
-            } else {
-
-                element.classList.add(
-                    "search-hidden"
-                );
-
-            }
-
-        });
-
-    });
-
-}
-
-
-/* ================= LIMPIAR BÚSQUEDA ================= */
-
-if (clearSearch) {
-
-    clearSearch.addEventListener("click", () => {
-
-        searchInput.value = "";
-
-
-        searchableElements.forEach(element => {
-
-            element.classList.remove(
-                "search-hidden"
-            );
-
-        });
-
-
-        searchInput.focus();
-
-    });
-
-}
-
-
-/* ================= ANIMACIÓN AL HACER SCROLL ================= */
-
-const observer =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.style.opacity = "1";
-
-                    entry.target.style.transform =
-                        "translateY(0)";
-
-                    observer.unobserve(
-                        entry.target
-                    );
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.08
-        }
-    );
-
-
-document.querySelectorAll(
-    ".category-card, .article-card, .guide-item, .code-card"
-).forEach(element => {
-
-    element.style.opacity = "0";
-
-    element.style.transform =
-        "translateY(15px)";
-
-    element.style.transition =
-        "opacity 0.5s ease, transform 0.5s ease";
-
-    observer.observe(element);
-
-});
+    if (count) count.textContent = `${visible} ${visible === 1 ? 'resultado' : 'resultados'}`;
+    if (empty) empty.hidden = visible !== 0;
+  }
+
+  input?.addEventListener('input', applyFilters);
+  filterButtons.forEach(btn => btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filter = btn.dataset.filter || 'all';
+    applyFilters();
+  }));
+
+  const menuBtn = document.querySelector('.menu-btn');
+  const nav = document.querySelector('.main-nav');
+  menuBtn?.addEventListener('click', () => nav?.classList.toggle('open'));
+  nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+})();
